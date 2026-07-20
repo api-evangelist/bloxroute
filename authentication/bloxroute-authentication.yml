@@ -1,0 +1,24 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.bloxroute.com/getting-started/authorization-headers
+docs: https://docs.bloxroute.com/getting-started/authorization-headers
+summary:
+  types: [apiKey]
+  api_key_in: [header]
+  oauth2_flows: []
+schemes:
+  - name: AuthorizationHeader
+    type: apiKey
+    in: header
+    parameter_name: Authorization
+    description: >-
+      All BDN / Cloud-API / Trader-API requests require an Authorization header
+      whose value is the account secret retrieved from the bloXroute Account
+      Portal (Account Details). The same header authorizes transaction
+      submission, stream subscriptions, and account-usage checks.
+    obtain: https://portal.bloxroute.com/
+    sources:
+      - https://docs.bloxroute.com/getting-started/authorization-headers
+notes:
+  - The Solana Trader API additionally supports client-certificate (mTLS) auth on the QUIC transport (solana-trader-quic-client-rust).
+  - BDN gateways use certificate-based authentication (per-account SSL certs) documented under each chain's Gateway > Authentication & Certificates.
