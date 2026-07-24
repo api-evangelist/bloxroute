@@ -1,0 +1,34 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.bloxroute.com/solana/trader-api/support/changelog
+scheme: semver
+scope: Solana Trader API
+current_version: v2.0
+entries:
+  - version: v2.0
+    date: '2023-07-26'
+    breaking: true
+    highlights:
+      - Major update; all endpoints are now grouped by project.
+      - Solana Trader API v1 continues to receive support.
+  - version: v1.8
+    date: '2023-05-22'
+    breaking: false
+    highlights:
+      - New Drift.trade endpoints for user deletion.
+      - Dynamic Jupiter account handling improvements.
+      - Drift SDK updates and slot information inclusion.
+  - version: v1.7
+    date: '2023-05-15'
+    breaking: false
+    highlights:
+      - New Drift.trade market depth endpoint.
+      - API performance enhancements.
+      - Fixes for Drift perpetual orderbook sorting and limit issues.
+  - version: v1.6
+    date: '2023-03-16'
+    breaking: false
+    highlights:
+      - Drift.trade perpetual DEX integration (orderbook, collateral, positions).
+      - Jupiter upgraded to v4; multi-step route-swap transaction support.
+      - Versioned transaction support; data-stream stability fixes.

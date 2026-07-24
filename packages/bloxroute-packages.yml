@@ -1,0 +1,59 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.bloxroute.com/solana/trader-api/quick-start
+packages:
+  - language: go
+    registry: pkg.go.dev
+    name: github.com/bloXroute-Labs/solana-trader-client-go
+    version: v1.9.7
+    url: https://pkg.go.dev/github.com/bloXroute-Labs/solana-trader-client-go
+    install: go get github.com/bloXroute-Labs/solana-trader-client-go
+    official: true
+    description: Go SDK for the bloXroute Solana Trader API (gRPC/HTTP/WS).
+  - language: go
+    registry: pkg.go.dev
+    name: github.com/bloXroute-Labs/bloxroute-sdk-go
+    version: v1.7.2
+    url: https://pkg.go.dev/github.com/bloXroute-Labs/bloxroute-sdk-go
+    install: go get github.com/bloXroute-Labs/bloxroute-sdk-go
+    official: true
+    description: Go SDK for the bloXroute BDN (streams, transaction submission across EVM chains).
+  - language: python
+    registry: pypi
+    name: bxsolana-trader
+    version: 2.2.9
+    url: https://pypi.org/project/bxsolana-trader/
+    install: pip install bxsolana-trader
+    official: true
+    source: https://github.com/bloXroute-Labs/solana-trader-client-python
+    description: Python SDK for the bloXroute Solana Trader API.
+  - language: python
+    registry: pypi
+    name: bloxroute-cli
+    version: 1.109.9
+    url: https://pypi.org/project/bloxroute-cli/
+    install: pip install bloxroute-cli
+    official: true
+    description: bloXroute command-line client for the BDN Cloud API and gateway operations.
+  - language: javascript
+    registry: npm
+    name: "@bloxroute/solana-trader-client-ts"
+    version: 2.2.12
+    url: https://www.npmjs.com/package/@bloxroute/solana-trader-client-ts
+    install: npm install @bloxroute/solana-trader-client-ts
+    official: true
+    description: TypeScript/JavaScript SDK for the bloXroute Solana Trader API.
+  - language: rust
+    registry: github
+    name: solana-trader-client-rust
+    url: https://github.com/bloXroute-Labs/solana-trader-client-rust
+    install: cargo add --git https://github.com/bloXroute-Labs/solana-trader-client-rust
+    official: true
+    description: Rust SDK for the bloXroute Solana Trader API.
+  - language: rust
+    registry: github
+    name: solana-trader-quic-client-rust
+    url: https://github.com/bloXroute-Labs/solana-trader-quic-client-rust
+    install: cargo add --git https://github.com/bloXroute-Labs/solana-trader-quic-client-rust
+    official: true
+    description: Rust client for submitting Solana transactions over QUIC with client-certificate auth.

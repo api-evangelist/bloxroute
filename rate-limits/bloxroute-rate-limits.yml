@@ -1,0 +1,16 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.bloxroute.com/solana/trader-api/introduction/rate-limits
+model: credit-based
+name: Trader API Credits
+docs: https://docs.bloxroute.com/solana/trader-api/introduction/rate-limits
+description: >-
+  Some chains enforce rate limits on transaction submission governed by a
+  credit-based system ("Trader API Credits"). Credit consumption varies by
+  endpoint and plan; current usage is retrievable at runtime.
+signals:
+  - endpoint: GetRateLimit
+    proto: grpc/bloxroute-solana-trader.proto#GetRateLimit
+    http: /api/v2/rate-limit
+    returns: current rate-limit / credit usage for the account
+pricing_ref: https://docs.bloxroute.com/getting-started/pricing

@@ -1,0 +1,16 @@
+generated: '2026-07-18'
+method: generated
+source: grpc/bloxroute-solana-trader.proto
+skills:
+  - file: bloxroute-submit-solana-transaction.md
+    name: Submit a Solana transaction with low latency
+    api: grpc/bloxroute-solana-trader.proto
+    operations: [GetRecentBlockHashV2, GetPriorityFee, PostSubmitV2, GetTransactionTrace, GetRateLimit]
+  - file: bloxroute-jupiter-swap.md
+    name: Quote and execute a Jupiter swap
+    api: grpc/bloxroute-solana-trader.proto
+    operations: [GetJupiterQuotes, PostJupiterSwap, PostJupiterRouteSwap, GetPriorityFee, PostSubmitV2]
+  - file: bloxroute-stream-mempool.md
+    name: Subscribe to a bloXroute mempool or event stream
+    api: asyncapi/bloxroute-streams-asyncapi.yml
+    operations: [GetPumpFunNewTokensStream, GetPumpFunSwapsStream, GetPriorityFeeStream, GetRecentBlockHashStream, GetTradesStream]

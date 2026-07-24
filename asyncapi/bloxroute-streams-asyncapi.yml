@@ -1,0 +1,158 @@
+asyncapi: 3.0.0
+info:
+  title: bloXroute Streams (BDN + Solana Trader API)
+  version: '2.0'
+  description: >-
+    Event surface for the bloXroute Blockchain Distribution Network and Solana
+    Trader API. Captured by the API Evangelist enrichment pipeline from the
+    provider's published stream documentation and protobuf (server-streaming
+    RPCs + Cloud-API/gateway WebSocket subscriptions). Not a provider-published
+    AsyncAPI. Payload schemas are referenced to the docs rather than reproduced.
+  contact:
+    name: bloXroute
+    url: https://docs.bloxroute.com/
+  x-apievangelist-generated: '2026-07-18'
+  x-apievangelist-method: generated
+  x-apievangelist-source:
+    - https://docs.bloxroute.com/eth/streams
+    - https://docs.bloxroute.com/bsc/streams
+    - https://docs.bloxroute.com/solana/trader-api/api-endpoints
+    - grpc/bloxroute-solana-trader.proto
+servers:
+  cloudApiWs:
+    host: api.blxrbdn.com
+    protocol: wss
+    description: BDN Cloud-API WebSocket endpoint (JSON-RPC subscribe/notification).
+  solanaTraderGrpc:
+    host: uk.solana.dex.blxrbdn.com
+    protocol: grpc
+    description: Solana Trader API gRPC endpoint (server-streaming RPCs); ny.solana.dex.blxrbdn.com also available.
+defaultContentType: application/json
+channels:
+  newTxs:
+    address: newTxs
+    description: New transactions observed on the BDN mempool stream (EVM chains).
+    messages:
+      newTx:
+        $ref: '#/components/messages/StreamNotification'
+  pendingTxs:
+    address: pendingTxs
+    description: Pending transactions stream (EVM chains), optionally validated against a local node.
+    messages:
+      pendingTx:
+        $ref: '#/components/messages/StreamNotification'
+  txReceipts:
+    address: txReceipts
+    description: Transaction receipts stream.
+    messages:
+      txReceipt:
+        $ref: '#/components/messages/StreamNotification'
+  newBlocks:
+    address: newBlocks
+    description: New blocks stream.
+    messages:
+      newBlock:
+        $ref: '#/components/messages/StreamNotification'
+  bdnBlocks:
+    address: bdnBlocks
+    description: Blocks propagated over the BDN, ahead of the local node.
+    messages:
+      bdnBlock:
+        $ref: '#/components/messages/StreamNotification'
+  ethOnBlock:
+    address: ethOnBlock
+    description: On-block event stream evaluating configured calls each block.
+    messages:
+      onBlock:
+        $ref: '#/components/messages/StreamNotification'
+  GetPumpFunNewTokensStream:
+    address: GetPumpFunNewTokensStream
+    description: New Pump.fun token creation events (Solana, via OFR shred stream).
+    messages:
+      event:
+        $ref: '#/components/messages/StreamNotification'
+  GetPumpFunSwapsStream:
+    address: GetPumpFunSwapsStream
+    description: Pump.fun swap events (Solana).
+    messages:
+      event:
+        $ref: '#/components/messages/StreamNotification'
+  GetPriorityFeeStream:
+    address: GetPriorityFeeStream
+    description: Top-percentile recent Solana priority fee by project over the last 100 slots.
+    messages:
+      event:
+        $ref: '#/components/messages/StreamNotification'
+  GetBundleTipStream:
+    address: GetBundleTipStream
+    description: Percentiles for recent Jito bundle tips (Solana).
+    messages:
+      event:
+        $ref: '#/components/messages/StreamNotification'
+  GetRecentBlockHashStream:
+    address: GetRecentBlockHashStream
+    description: Latest Solana blockhash for transaction construction.
+    messages:
+      event:
+        $ref: '#/components/messages/StreamNotification'
+operations:
+  subscribeNewTxs:
+    action: receive
+    channel:
+      $ref: '#/channels/newTxs'
+  subscribePendingTxs:
+    action: receive
+    channel:
+      $ref: '#/channels/pendingTxs'
+  subscribeTxReceipts:
+    action: receive
+    channel:
+      $ref: '#/channels/txReceipts'
+  subscribeNewBlocks:
+    action: receive
+    channel:
+      $ref: '#/channels/newBlocks'
+  subscribeBdnBlocks:
+    action: receive
+    channel:
+      $ref: '#/channels/bdnBlocks'
+  subscribeEthOnBlock:
+    action: receive
+    channel:
+      $ref: '#/channels/ethOnBlock'
+  subscribePumpFunNewTokens:
+    action: receive
+    channel:
+      $ref: '#/channels/GetPumpFunNewTokensStream'
+  subscribePumpFunSwaps:
+    action: receive
+    channel:
+      $ref: '#/channels/GetPumpFunSwapsStream'
+  subscribePriorityFee:
+    action: receive
+    channel:
+      $ref: '#/channels/GetPriorityFeeStream'
+  subscribeBundleTip:
+    action: receive
+    channel:
+      $ref: '#/channels/GetBundleTipStream'
+  subscribeRecentBlockHash:
+    action: receive
+    channel:
+      $ref: '#/channels/GetRecentBlockHashStream'
+components:
+  messages:
+    StreamNotification:
+      name: StreamNotification
+      title: BDN stream notification
+      summary: A subscription notification payload; concrete schema per stream is documented in the bloXroute docs.
+      contentType: application/json
+      payload:
+        type: object
+        description: See the per-stream docs page for the exact notification fields.
+  securitySchemes:
+    authorizationHeader:
+      type: httpApiKey
+      name: Authorization
+      in: user
+      description: Account Authorization header from the bloXroute Account Portal.

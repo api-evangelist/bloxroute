@@ -1,0 +1,25 @@
+generated: '2026-07-18'
+method: derived
+source: grpc/bloxroute-solana-trader.proto
+standards:
+  - id: grpc
+    conforms: true
+    evidence: Solana Trader API published as a protobuf/gRPC service (service Api) with server-streaming RPCs.
+  - id: protobuf3
+    conforms: true
+    evidence: grpc/bloxroute-solana-trader.proto uses proto3 message/service definitions.
+  - id: openapi
+    conforms: partial
+    evidence: Per-region Swagger UI published (uk./ny.solana.dex.blxrbdn.com/swagger/) for the HTTP interface.
+  - id: json-rpc
+    conforms: true
+    evidence: Cloud-API / gateway WebSocket streams use JSON-RPC subscribe/notification semantics.
+  - id: oauth2
+    conforms: false
+    evidence: Auth is a static Authorization header (account secret), not OAuth2.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: No application/problem+json error catalog published.
+  - id: server-sent-streaming
+    conforms: true
+    evidence: 21 server-streaming RPCs plus WebSocket subscription channels for tx/block/event feeds.

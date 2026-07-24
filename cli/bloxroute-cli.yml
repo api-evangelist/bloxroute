@@ -1,0 +1,18 @@
+generated: '2026-07-18'
+method: searched
+source: https://pypi.org/project/bloxroute-cli/
+cli:
+  name: bloxroute-cli
+  version: 1.109.9
+  language: python
+  install:
+    - pip install bloxroute-cli
+  homepage: https://bloxroute.com
+  description: >-
+    First-party bloXroute command-line client used to interact with the BDN
+    Cloud API and gateway — subscribe to streams (newTxs, pendingTxs,
+    txReceipts, newBlocks), send transactions, and inspect account usage over
+    the WebSocket/Cloud-API interface.
+  auth:
+    header: Authorization
+    note: Account Authorization header retrieved from the bloXroute Account Portal.

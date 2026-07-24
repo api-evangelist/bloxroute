@@ -1,0 +1,29 @@
+generated: '2026-07-18'
+method: probed
+note: >-
+  No genuine .well-known documents are published. bloxroute.com returns HTTP 202
+  captcha challenge pages (Cloudflare sgcaptcha, content-type text/html) for all
+  probed paths — not real discovery documents; docs.bloxroute.com returns 404;
+  the Trader API host returns 401 for all paths. No files saved (nothing to save).
+hosts:
+  - host: https://bloxroute.com
+    documents:
+      - {path: /.well-known/security.txt, status: 202, file: null, note: captcha challenge (not a real document)}
+      - {path: /.well-known/openid-configuration, status: 202, file: null, note: captcha challenge}
+      - {path: /.well-known/oauth-authorization-server, status: 202, file: null, note: captcha challenge}
+      - {path: /.well-known/api-catalog, status: 202, file: null, note: captcha challenge}
+      - {path: /.well-known/ai-plugin.json, status: 202, file: null, note: captcha challenge}
+  - host: https://docs.bloxroute.com
+    documents:
+      - {path: /.well-known/security.txt, status: 404, file: null}
+      - {path: /.well-known/openid-configuration, status: 404, file: null}
+      - {path: /.well-known/oauth-authorization-server, status: 404, file: null}
+      - {path: /.well-known/api-catalog, status: 404, file: null}
+      - {path: /.well-known/ai-plugin.json, status: 404, file: null}
+  - host: https://uk.solana.dex.blxrbdn.com
+    documents:
+      - {path: /.well-known/security.txt, status: 401, file: null}
+      - {path: /.well-known/openid-configuration, status: 401, file: null}
+      - {path: /.well-known/oauth-authorization-server, status: 401, file: null}
+      - {path: /.well-known/api-catalog, status: 401, file: null}
+      - {path: /.well-known/ai-plugin.json, status: 401, file: null}

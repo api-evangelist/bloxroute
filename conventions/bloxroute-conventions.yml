@@ -1,0 +1,40 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.bloxroute.com/solana/trader-api/introduction
+authentication:
+  style: api-key-header
+  header: Authorization
+  ref: authentication/bloxroute-authentication.yml
+transports:
+  - gRPC
+  - HTTP (REST, Swagger UI per region)
+  - WebSocket (Cloud-API JSON-RPC streams)
+  - QUIC (Solana transaction submission, mTLS)
+regions:
+  docs: https://docs.bloxroute.com/solana/trader-api/introduction/regions
+  hosts:
+    - uk.solana.dex.blxrbdn.com
+    - ny.solana.dex.blxrbdn.com
+rate_limiting:
+  model: credit-based
+  name: Trader API Credits
+  docs: https://docs.bloxroute.com/solana/trader-api/introduction/rate-limits
+  signal: GetRateLimit / rate-limit endpoint returns current usage
+  ref: rate-limits/bloxroute-rate-limits.yml
+streaming:
+  style: server-streaming (gRPC streams + WebSocket subscriptions)
+  subscribe: Creating a Subscription / Handling the Notification / Cancelling a Subscription
+  docs: https://docs.bloxroute.com/eth/streams/working-with-streams
+  channels_ref: asyncapi/bloxroute-streams-asyncapi.yml
+idempotency:
+  supported: false
+  notes: >-
+    No idempotency-key contract is documented. Transaction submission is
+    inherently deduplicated on-chain by signature; snipe/batch submission use
+    dedicated endpoints rather than an idempotency header.
+versioning:
+  scheme: semver
+  ref: lifecycle/bloxroute-lifecycle.yml
+error_semantics:
+  transport: gRPC status codes and HTTP status codes; JSON error bodies on REST.
+  notes: No published RFC 9457 problem+json catalog.

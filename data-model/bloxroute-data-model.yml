@@ -1,0 +1,47 @@
+generated: '2026-07-18'
+method: derived
+source: grpc/bloxroute-solana-trader.proto
+description: >-
+  Entity graph derived from the Solana Trader API protobuf messages. bloXroute
+  is a DEX/trading and mempool-infrastructure API, so entities are market-data
+  and order/transaction objects rather than CRUD resources.
+entities:
+  - name: Market
+    keys: [name, address]
+    from: GetMarkets / GetMarketsV2
+  - name: Orderbook
+    from: GetOrderbook / GetOrderbookV2
+    relationships:
+      - type: belongs_to
+        target: Market
+        via: market
+  - name: Order
+    from: PostOrder / GetOrders / GetOpenOrders / GetOrderByID
+    relationships:
+      - type: belongs_to
+        target: Market
+        via: market
+      - type: has_one
+        target: Transaction
+        via: transaction
+  - name: Trade
+    from: GetTrades / GetTradesStream
+    relationships:
+      - type: belongs_to
+        target: Market
+        via: market
+  - name: Pool
+    from: GetPools / GetRaydiumPools / GetRaydiumCLMMPools
+  - name: Quote
+    from: GetQuotes / GetRaydiumQuotes / GetJupiterQuotes / GetPumpFunQuotes
+    relationships:
+      - type: belongs_to
+        target: Pool
+        via: pool
+  - name: Transaction
+    keys: [signature]
+    from: PostSubmit / GetTransaction / GetTransactionTrace
+  - name: Token
+    keys: [mint]
+    from: GetAccountBalance / GetTokenAccounts
+notes: Streaming counterparts (GetTradesStream, GetOrderbooksStream, GetPricesStream) emit the same entities as notifications; see asyncapi/bloxroute-streams-asyncapi.yml.

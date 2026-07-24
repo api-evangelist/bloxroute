@@ -1,9 +1,31 @@
 aid: bloxroute
 name: bloXroute
-description: 'bloXroute is a company surfaced as a portfolio company of pantera-capital, softbank-vision-fund
-  and added to the API Evangelist network as a stub for enrichment. Sector: crypto. This profile is a
-  lead awaiting the enrichment pipeline.'
+description: >-
+  bloXroute operates the Blockchain Distribution Network (BDN), a high-capacity,
+  low-latency global relay network that speeds up transaction and block
+  propagation for blockchain traders, builders, and validators. Its developer
+  surface spans the BDN Gateway and Cloud API, the Solana Trader API
+  (gRPC/HTTP/WebSocket/QUIC) for low-latency transaction submission, bundles,
+  sniping, and DEX routing across Pump.fun, Jupiter, and Raydium, real-time
+  mempool/block/event streams (newTxs, pendingTxs, txReceipts, newBlocks), the
+  Optimized Feed Relay (OFR) shred stream, MEV relay and BackRunMe programs, and
+  Protect/Fast RPC services. Supported chains include Solana, BNB Chain, Base,
+  Ethereum, Polygon, Hyperliquid, Robinhood, Monad, and X Layer. Added to the
+  API Evangelist network as a crypto-infrastructure provider.
 url: https://raw.githubusercontent.com/api-evangelist/bloxroute/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://avatars.githubusercontent.com/u/36855910?v=4
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -13,16 +35,102 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
 - Crypto
-apis: []
+- Blockchain
+- Trading
+- MEV
+- Solana
+- Ethereum
+- Low Latency
+- Streaming
+- Infrastructure
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- name: bloXroute Solana Trader API
+  description: >-
+    Low-latency Solana trading API (gRPC, HTTP/REST with per-region Swagger UI,
+    WebSocket, and QUIC) for transaction submission, batching, sniping, bundle
+    execution, DEX quoting/swaps (Jupiter, Raydium, Pump.fun), market data, and
+    real-time streams. Authorized with an account Authorization header.
+  humanURL: https://docs.bloxroute.com/solana/trader-api
+  baseURL: https://uk.solana.dex.blxrbdn.com
+  properties:
+  - type: Protobuf
+    url: grpc/bloxroute-solana-trader.proto
+  - type: APIReference
+    url: https://uk.solana.dex.blxrbdn.com/swagger/
+  - type: Documentation
+    url: https://docs.bloxroute.com/solana/trader-api
+  - type: AsyncAPI
+    url: asyncapi/bloxroute-streams-asyncapi.yml
+  - type: ChangeLog
+    url: changelog/bloxroute-changelog.yml
+  - type: RateLimits
+    url: rate-limits/bloxroute-rate-limits.yml
+  - type: DataModel
+    url: data-model/bloxroute-data-model.yml
 common:
+- type: DomainSecurity
+  url: security/bloxroute-domain-security.yml
 - type: Website
   url: https://bloxroute.com/
+- type: DeveloperPortal
+  url: https://docs.bloxroute.com/
+- type: Documentation
+  url: https://docs.bloxroute.com/
+- type: APIReference
+  url: https://uk.solana.dex.blxrbdn.com/swagger/
+- type: GettingStarted
+  url: https://docs.bloxroute.com/getting-started/register-an-account
+- type: SignUp
+  url: https://portal.bloxroute.com/
+- type: Support
+  url: https://docs.bloxroute.com/getting-started/technical-support
+- type: Pricing
+  url: https://docs.bloxroute.com/getting-started/pricing
+- type: StatusPage
+  url: https://docs.bloxroute.com/getting-started/technical-support/cloud-api-health
+- type: GitHubOrganization
+  url: https://github.com/bloXroute-Labs
+- type: Authentication
+  url: authentication/bloxroute-authentication.yml
+- type: MCPServer
+  url: mcp/bloxroute-mcp.yml
+- type: Protobuf
+  url: grpc/bloxroute-solana-trader.proto
+- type: Packages
+  url: packages/bloxroute-packages.yml
+- type: SDKs
+  url: packages/bloxroute-packages.yml
+- type: CLI
+  url: cli/bloxroute-cli.yml
+- type: LLMsTxt
+  url: llms/bloxroute-llms.txt
+- type: ChangeLog
+  url: changelog/bloxroute-changelog.yml
+- type: Lifecycle
+  url: lifecycle/bloxroute-lifecycle.yml
+- type: Conventions
+  url: conventions/bloxroute-conventions.yml
+- type: Conformance
+  url: conformance/bloxroute-conformance.yml
+- type: RateLimits
+  url: rate-limits/bloxroute-rate-limits.yml
+- type: AsyncAPI
+  url: asyncapi/bloxroute-streams-asyncapi.yml
+- type: DataModel
+  url: data-model/bloxroute-data-model.yml
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

@@ -1,0 +1,23 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.bloxroute.com/solana/trader-api/support
+versioning:
+  scheme: semver
+  current: v2.0
+  docs: https://docs.bloxroute.com/solana/trader-api/support/changelog
+  notes: Solana Trader API groups endpoints by project since v2.0; v1 still supported.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No formal deprecation/Sunset-header policy published; v1 kept in continuous support alongside v2.
+sla:
+  url: null
+  uptime_target: null
+status_page:
+  - name: Cloud API Health
+    url: https://docs.bloxroute.com/getting-started/technical-support/cloud-api-health
+  - name: Solana Trader API Health
+    url: https://docs.bloxroute.com/solana/trader-api/support/api-health
+support:
+  url: https://docs.bloxroute.com/getting-started/technical-support
+deprecated_operations: []
