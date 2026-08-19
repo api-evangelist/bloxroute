@@ -9,19 +9,23 @@ server:
   url: https://mcp.blxrbdn.com
   auth: none
   access: read-only
-description: >-
-  Official bloXroute hosted MCP server. Provides read-only access to bloXroute's
-  public documentation and integration knowledge so agents can find endpoints,
-  understand services, and generate integration code across Solana, BNB Smart
-  Chain, Base, Ethereum, and Polygon. No API key required.
+description: Official bloXroute hosted MCP server. Provides read-only access to bloXroute's public documentation
+  and integration knowledge so agents can find endpoints, understand services, and generate integration
+  code across Solana, BNB Smart Chain, Base, Ethereum, and Polygon. No API key required.
 install:
   claude_code: claude mcp add --transport http bloxroute https://mcp.blxrbdn.com
-  claude_desktop: 'npx mcp-remote https://mcp.blxrbdn.com'
-  cursor: 'Settings > MCP > add server URL https://mcp.blxrbdn.com'
+  claude_desktop: npx mcp-remote https://mcp.blxrbdn.com
+  cursor: Settings > MCP > add server URL https://mcp.blxrbdn.com
   vscode: 'Command Palette > MCP: Add Server > https://mcp.blxrbdn.com'
-  chatgpt: 'Advanced Settings > add connector, No Auth, URL https://mcp.blxrbdn.com'
+  chatgpt: Advanced Settings > add connector, No Auth, URL https://mcp.blxrbdn.com
 tools:
-  note: >-
-    Server exposes documentation/search tools for locating endpoints and
-    generating integration code; the docs do not enumerate individual tool
-    names. Read-only over public knowledge.
+  note: Server exposes documentation/search tools for locating endpoints and generating integration code;
+    the docs do not enumerate individual tool names. Read-only over public knowledge.
+deployment:
+  mode: remote
+  endpoint: https://mcp.blxrbdn.com
+  verified: probed
+  probe: live
+  tools: 4
+  checked: '2026-08-12'
+  source: catalog MCP census
