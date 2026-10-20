@@ -1,69 +1,4 @@
 edges:
-- partner_name: DefiLlama Chainlist (extraRpcs.js)
-  partner: null
-  partner_match: register
-  type: register
-  channel: standard-directory
-  relationship: standard-participant
-  direction: partner-built
-  evidence: https://github.com/DefiLlama/chainlist/blob/main/constants/extraRpcs.js
-  category: Public JSON-RPC node endpoint
-  contract_reference:
-    register: DefiLlama Chainlist (extraRpcs.js)
-    standard: JSON-RPC node endpoint listing
-    spec_file: null
-    role: public-rpc-operator
-    registered_name: bloxroute
-    name_source: register
-    register_id: blxrbdn.com
-    matched_domain: blxrbdn.com
-    matched_by: domain+privacy-statement-domain
-    domain_source: privacy-statement URL (register-stated)
-    endpoints_sample:
-    - https://virginia.rpc.blxrbdn.com/
-    - https://uk.rpc.blxrbdn.com/
-    - https://singapore.rpc.blxrbdn.com/
-    chains_sample:
-    - BNB Smart Chain Mainnet
-    - Base
-    - Ethereum Mainnet
-    - Polygon Mainnet
-    - Robinhood Chain
-    signal_note: 'listing only: per-chain entries are context, never counted; breadth is not credit; the register
-      certifies nothing, so no certified_products'
-    detected_by: sweep-blockchain-rpc.py
-    detected: '2026-10-18'
-    tracking_labels:
-    - 'yes'
-  detected_by: sweep-blockchain-rpc.py
-  first_seen: '2026-10-18'
-- partner_name: Ethereum JSON-RPC (execution-apis)
-  partner: null
-  partner_match: register
-  type: register
-  channel: standard-directory
-  relationship: compatible
-  shape: ethereum-json-rpc
-  degree: listed
-  evidence_kind: register-listing
-  report_only: true
-  direction: partner-built
-  evidence: https://github.com/DefiLlama/chainlist/blob/main/constants/extraRpcs.js
-  note: an EVM chain's public RPC list carries this provider's endpoint; a listing, not a conformance test. REPORT
-    ONLY (compatible edges are never in depth or position)
-  contract_reference:
-    register: Chainlist / ethereum-lists EVM RPC listings
-    spec_file: https://github.com/ethereum/execution-apis
-    role: evm-json-rpc-endpoint
-    matched_domain: blxrbdn.com
-    endpoints_sample:
-    - https://virginia.rpc.blxrbdn.com/
-    - https://uk.rpc.blxrbdn.com/
-    signal_note: report only
-    detected_by: sweep-blockchain-rpc.py
-    detected: '2026-10-18'
-  detected_by: sweep-blockchain-rpc.py
-  first_seen: '2026-10-18'
 - partner_name: Go module proxy
   partner: null
   partner_match: null
@@ -172,6 +107,101 @@ edges:
     detected: '2026-10-18'
   detected_by: sweep-official-sdks.py
   first_seen: '2026-10-18'
+- partner_name: DefiLlama Chainlist (extraRpcs.js)
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://github.com/DefiLlama/chainlist/blob/main/constants/extraRpcs.js
+  category: Public JSON-RPC node endpoint
+  contract_reference:
+    register: DefiLlama Chainlist (extraRpcs.js)
+    standard: JSON-RPC node endpoint listing
+    spec_file: null
+    role: public-rpc-operator
+    registered_name: bloxroute
+    name_source: register
+    register_id: blxrbdn.com
+    matched_domain: blxrbdn.com
+    matched_by: domain+privacy-statement-domain
+    domain_source: privacy-statement URL (register-stated)
+    endpoints_sample:
+    - https://virginia.rpc.blxrbdn.com/
+    - https://uk.rpc.blxrbdn.com/
+    - https://singapore.rpc.blxrbdn.com/
+    chains_sample:
+    - BNB Smart Chain Mainnet
+    - Base
+    - Ethereum Mainnet
+    - Polygon Mainnet
+    - Robinhood Chain
+    signal_note: 'listing only: per-chain entries are context, never counted; breadth is not credit; the register
+      certifies nothing, so no certified_products'
+    detected_by: sweep-blockchain-rpc.py
+    detected: '2026-10-18'
+    tracking_labels:
+    - 'yes'
+  detected_by: sweep-blockchain-rpc.py
+  first_seen: '2026-10-18'
+- partner_name: Ethereum JSON-RPC (execution-apis)
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: compatible
+  shape: ethereum-json-rpc
+  degree: listed
+  evidence_kind: register-listing
+  report_only: true
+  direction: partner-built
+  evidence: https://github.com/DefiLlama/chainlist/blob/main/constants/extraRpcs.js
+  note: an EVM chain's public RPC list carries this provider's endpoint; a listing, not a conformance test. REPORT
+    ONLY (compatible edges are never in depth or position)
+  contract_reference:
+    register: Chainlist / ethereum-lists EVM RPC listings
+    spec_file: https://github.com/ethereum/execution-apis
+    role: evm-json-rpc-endpoint
+    matched_domain: blxrbdn.com
+    endpoints_sample:
+    - https://virginia.rpc.blxrbdn.com/
+    - https://uk.rpc.blxrbdn.com/
+    signal_note: report only
+    detected_by: sweep-blockchain-rpc.py
+    detected: '2026-10-18'
+  detected_by: sweep-blockchain-rpc.py
+  first_seen: '2026-10-18'
+- partner_name: PyPI
+  partner: pypi
+  partner_match: register
+  type: register
+  direction: provider-built
+  category: official CLI (PyPI)
+  evidence: https://pypi.org/project/bloxroute-cli/
+  channel: package-registry
+  relationship: distribution-channel
+  contract_reference:
+    register: PyPI (public package index)
+    spec_file: null
+    packages:
+    - name: bloxroute-cli
+      version: 1.109.9
+      released: '2022-03-25'
+      released_field: upload_time
+      lapsed: true
+      page: https://pypi.org/project/bloxroute-cli/
+      cli: 'PyPI name/summary: bloXroute CLI'
+      repo_leg: domain:bloxroute.com
+      publisher_leg: email:bloxroute.com
+      matched_by: domain
+    current: false
+    signal_note: 'the provider''s own command-line tool on a package manager: distribution, not an integration;
+      lapsed = no release in 24 months or deprecated / disabled by the manager'
+    detected_by: sweep-official-clis.py
+    detected: '2026-10-20'
+  detected_by: sweep-official-clis.py
+  first_seen: '2026-10-20'
 generated: '2026-10-18'
 method: searched
 source:
@@ -180,9 +210,14 @@ source:
 - https://github.com/cosmos/chain-registry
 checked:
 - https://api.nuget.org/v3
+- https://cdn.winget.microsoft.com/cache
 - https://chainid.network/chains.json
 - https://crates.io/api/v1
+- https://formulae.brew.sh/api/cask.json
+- https://formulae.brew.sh/api/formula.json
 - https://github.com/DefiLlama/chainlist/blob/main/constants/extraRpcs.js
+- https://github.com/ScoopInstaller/Extras
+- https://github.com/ScoopInstaller/Main
 - https://github.com/cosmos/chain-registry
 - https://proxy.golang.org
 - https://pypi.org/pypi
