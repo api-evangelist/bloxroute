@@ -64,6 +64,126 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-bloXroute is a company surfaced as a portfolio company of pantera-capital, softbank-vision-fund and added to the API Evangelist network as a stub for enrichment. Sector: crypto. This profile is a lead awaiting the enrichment pipeline.
+bloXroute operates the Blockchain Distribution Network (BDN), a high-capacity, low-latency global relay network that speeds up transaction and block propagation for blockchain traders, builders, and validators. Its developer surface spans the BDN Gateway and Cloud API, the Solana Trader API (gRPC/HTTP/WebSocket/QUIC) for low-latency transaction submission, bundles, sniping, and DEX routing across Pump.fun, Jupiter, and Raydium, real-time mempool/block/event streams (newTxs, pendingTxs, txReceipts, newBlocks), the Optimized Feed Relay (OFR) shred stream, MEV relay and BackRunMe programs, and Protect/Fast RPC services. Supported chains include Solana, BNB Chain, Base, Ethereum, Polygon, Hyperliquid, Robinhood, Monad, and X Layer. Added to the API Evangelist network as a crypto-infrastructure provider.
 
-Backed by: pantera-capital, softbank-vision-fund — https://bloxroute.com/
+**Areas:** Company · Cryptocurrency · Blockchain · Trading · MEV · Solana · Ethereum · Low Latency · Streaming · Infrastructure · Real-Time
+
+## bloXroute on APIs.io
+
+Everything profiled for bloXroute is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/bloxroute/](https://apis.io/providers/bloxroute/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [bloXroute Solana Trader API](https://apis.io/apis/bloxroute/bloxroute-solana-trader-api/) — Low-latency Solana trading API (gRPC, HTTP/REST with per-region Swagger UI, WebSocket, and QUIC) for transaction submission, batching, sniping, bundle…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [bloXroute Streams (BDN + Solana Trader API)](https://apis.io/asyncapis/bloxroute/bloxroute-streams-asyncapi/)
+
+#### Event channels (11)
+
+Individual events and webhooks the provider emits.
+
+- [bdnBlocks](https://apis.io/channels/bloxroute/bdnblocks/)
+- [ethOnBlock](https://apis.io/channels/bloxroute/ethonblock/)
+- [GetBundleTipStream](https://apis.io/channels/bloxroute/getbundletipstream/)
+- [GetPriorityFeeStream](https://apis.io/channels/bloxroute/getpriorityfeestream/)
+- [GetPumpFunNewTokensStream](https://apis.io/channels/bloxroute/getpumpfunnewtokensstream/)
+- [GetPumpFunSwapsStream](https://apis.io/channels/bloxroute/getpumpfunswapsstream/)
+- [GetRecentBlockHashStream](https://apis.io/channels/bloxroute/getrecentblockhashstream/)
+- [newBlocks](https://apis.io/channels/bloxroute/newblocks/)
+- [newTxs](https://apis.io/channels/bloxroute/newtxs/)
+- [pendingTxs](https://apis.io/channels/bloxroute/pendingtxs/)
+- [txReceipts](https://apis.io/channels/bloxroute/txreceipts/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [bloxroute](https://apis.io/servers/bloxroute/bloxroute/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Bloxroute Authentication](https://apis.io/security/bloxroute/bloxroute-authentication/)
+- [Bloxroute Domain Security](https://apis.io/security/bloxroute/bloxroute-domain-security/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Bloxroute Rate Limits](https://apis.io/rate-limits/bloxroute/bloxroute-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://bloxroute.com/)
+- [Documentation](https://docs.bloxroute.com/)
+- [Getting started](https://docs.bloxroute.com/getting-started/register-an-account)
+- [API reference](https://uk.solana.dex.blxrbdn.com/swagger/)
+- [Pricing](https://docs.bloxroute.com/getting-started/pricing)
+- [Sign up](https://portal.bloxroute.com/)
+- [Support](https://docs.bloxroute.com/getting-started/technical-support)
+- [GitHub](https://github.com/bloXroute-Labs)
+- [Status](https://docs.bloxroute.com/getting-started/technical-support/cloud-api-health)
+
+## API Evangelist rating
+
+**Kin Score 38.7** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 42.7 |
+| Contract governance | 4.5 |
+| Operational transparency | 34.2 |
+| Developer ergonomics | 70.8 |
+| Access clarity | 10.5 |
+
+**Agent readiness 25.0** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | platform (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | derived (partial credit) |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | yes |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 15.7** — Securities & Market Data
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/bloxroute/](https://apis.io/providers/bloxroute/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for bloXroute: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/bloxroute/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
